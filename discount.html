@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>משקיעות | מחשבון היוון</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a href="index.html" class="brand">
+        <img src="images/logo.jpg" alt="משקיעות" class="brand-logo">
+    </a>
+    <nav class="nav">
+      <a href="index.html">דף ראשי</a>
+      <a href="compound.html">ריבית דה ריבית</a>
+      <a href="discount.html" class="active">היוון</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="calculator-card">
+      <h1>מחשבון היוון</h1>
+
+      <div class="form-grid discount-grid">
+        <div class="form-group">
+          <label for="futureValue">סכום עתידי</label>
+          <input type="text" id="futureValue" placeholder="100,000" inputmode="numeric" />
+        </div>
+
+        <div class="form-group">
+          <label for="discountYears">מספר שנים</label>
+          <input type="number" id="discountYears" placeholder="10" min="1" />
+        </div>
+
+        <div class="form-group">
+          <label for="discountRate">מקדם היוון (%)</label>
+          <input type="number" id="discountRate" placeholder="8" min="0" step="0.1" />
+        </div>
+      </div>
+
+      <button id="discountBtn" class="primary-btn full-width-btn">חישוב</button>
+
+      <section class="result-section hidden-section" id="discountResultSection">
+        <h2>תוצאה</h2>
+        <div class="result-grid discount-result-grid">
+          <div class="result-item single-result">
+            <span class="result-label">הערך הנוכחי</span>
+            <span class="result-value" id="presentValue">—</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="chart-section hidden-section" id="discountChartSection">
+        <h2>שינוי הערך המהוון לאורך השנים</h2>
+        <div class="chart-container">
+          <canvas id="discountChart"></canvas>
+        </div>
+      </section>
+
+      <section class="result-section hidden-section" id="discountTableSection">
+        <h2>טבלת היוון לפי שנים</h2>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>שנה</th>
+                <th>הערך הנוכחי</th>
+              </tr>
+            </thead>
+            <tbody id="discountTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script-discount.js"></script>
+</body>
+</html>

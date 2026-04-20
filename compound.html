@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>משקיעות | מחשבון ריבית דה ריבית</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a href="index.html" class="brand">
+        <img src="images/logo.jpg" alt="משקיעות" class="brand-logo">
+    </a>
+    <nav class="nav">
+      <a href="index.html">דף ראשי</a>
+      <a href="compound.html" class="active">ריבית דה ריבית</a>
+      <a href="discount.html">היוון</a>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="calculator-card">
+      <h1>מחשבון ריבית דה ריבית</h1>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="initialAmount">סכום השקעה ראשוני</label>
+          <input type="text" id="initialAmount" placeholder="100,000" inputmode="numeric" />
+        </div>
+
+        <div class="form-group">
+          <label for="monthlyAmount">סכום השקעה חודשי</label>
+          <input type="text" id="monthlyAmount" placeholder="1,000" inputmode="numeric" />
+        </div>
+
+        <div class="form-group">
+          <label for="annualReturn">תשואה שנתית ממוצעת (%)</label>
+          <input type="number" id="annualReturn" placeholder="8" min="0" step="0.1" />
+        </div>
+
+        <div class="form-group">
+          <label for="years">מספר שנות השקעה</label>
+          <input type="number" id="years" placeholder="10" min="1" />
+        </div>
+      </div>
+
+      <button id="calculateBtn" class="primary-btn full-width-btn">חישוב</button>
+
+      <section class="result-section hidden-section" id="compoundResultSection">
+        <h2>תוצאות</h2>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="result-label">הסכום הסופי</span>
+            <span class="result-value" id="finalAmount">—</span>
+          </div>
+
+          <div class="result-item">
+            <span class="result-label">סך ההפקדות</span>
+            <span class="result-value" id="totalDeposits">—</span>
+          </div>
+
+          <div class="result-item">
+            <span class="result-label">הרווח מההשקעה</span>
+            <span class="result-value" id="totalProfit">—</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="chart-section hidden-section" id="compoundChartSection">
+        <h2>צמיחה לאורך השנים</h2>
+        <canvas id="growthChart"></canvas>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script-compound.js"></script>
+</body>
+</html>
