@@ -8,18 +8,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
 
-  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="topbar">
-    <a href="index.html" class="brand">
-        <img src="images/logo.jpg" alt="משקיעות" class="brand-logo">
+    <a href="/" class="brand">
+        <img src="/images/logo.jpg" alt="משקיעות" class="brand-logo">
     </a>
     <nav class="nav">
-      <a href="index.html">דף ראשי</a>
-      <a href="compound.html">ריבית דה ריבית</a>
-      <a href="discount.html" class="active">היוון</a>
+      <a href="/">דף ראשי</a>
+      <a href="/compound-interest/">ריבית דה ריבית</a>
+      <a href="/present-value/" class="active">היוון</a>
     </nav>
   </header>
 
@@ -28,8 +28,9 @@
       <h1>מחשבון היוון</h1>
 
       <div class="form-grid discount-grid">
+
         <div class="form-group">
-          <label for="futureValue">סכום עתידי</label>
+          <label for="futureValue">סכום</label>
           <input type="text" id="futureValue" placeholder="100,000" inputmode="numeric" />
         </div>
 
@@ -82,6 +83,6 @@
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="script-discount.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>
